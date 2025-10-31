@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coffee Shop Website</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.css"
+      integrity="sha512-U9Y1sGB3sLIpZm3ePcrKbXVhXlnQNcuwGQJ2WjPjnp6XHqVTdgIlbaDzJXJIAuCTp3y22t+nhI4B88F/5ldjFA=="
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="main-container">
+      <header class="header-section">
+        <div class="header-section__top-bar responsive-container">
+          <ul class="header-section__top-bar-text">
+            <li>
+              <p>Mon-Fri: 8am to 2pm</p>
+            </li>
+            <li>
+              <p>Sat-Sun: 11am to 4pm</p>
+            </li>
+          </ul>
+        </div>
+        <nav class="header-section__nav responsive-container">
+          <div class="navbar__logo-div">
+            <img
+              class="navbar__logo"
+              src="./Images/Coffee-logo.png"
+              alt="Coffee Logo"
+            />
+            <span class="navbar__shop-name">Café Coffea</span>
+          </div>
+          <div class="navbar__links-div">
+            <ul class="navbar__links">
+              <li><a href="#section-1" class="white-clr">HOME</a></li>
+              <li><a href="#section-2" class="white-clr">ABOUT</a></li>
+              <li><a href="#section-3" class="white-clr">COFFEE</a></li>
+              <li><a href="#section-5" class="white-clr">REVIEW</a></li>
+              <li><a href="#section-6" class="white-clr">BLOG</a></li>
+              <li><a href="#section-7" class="white-clr">CONTACT US</a></li>
+              <li><a href="#" id="loginBtn" class="white-clr">LOGIN</a></li>
+              <li>
+                <a href="cart.html" id="cart-link"
+                  >🛒 CART
+                  <span id="cart-count">0</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+      <main class="main-section">
+        <section class="section-1" id="section-1">
+          <div class="section-1-div responsive-container">
+            <span class="section-1__span-text"
+              >NOW YOU CAN FEEL THE ENERGY</span
+            >
+            <h1 class="section-1__main-heading">
+              Start your day with <br />
+              a black Coffee
+            </h1>
+            <a href="#section-3" class="section-1__button-white">BUY NOW</a>
+          </div>
+        </section>
+        <section class="section-2 responsive-container" id="section-2">
+          <div class="section-2-left">
+            <video src="./Videos/Coffee-video.mp4" autoplay muted></video>
+          </div>
+          <div class="section-2-right">
+            <span class="section-2-right__span"
+              >LIVE COFFEE MAKING PROCESS.</span
+            >
+            <h2 class="section-2-right__h2 black-clr">
+              We Telecast our Coffee Making Live
+            </h2>
+            <h4 class="section-2-right__h4 black-clr">
+              We are here to listen from you deliver exellence
+            </h4>
+            <p class="section-2-right__p black-clr">
+              "We are live streaming our coffee making and would love to hear
+              your feedback and questions on how we can deliver an even better
+              coffee experience." "Watch our live coffee brewing and tell us
+              what excellence means to you, so we can incorporate your
+              Suggestions."
+            </p>
+          </div>
+        </section>
+        <section
+          class="section-3 responsive-container common-padding"
+          id="section-3"
+        >
+          <h2 class="section-3__h2 black-clr text-center">
+            What kind of Coffee we serve for you
+          </h2>
+          <p class="section-3__p black-clr text-center">
+            Who are in extremely love with eco friendly system.
+          </p>
+
+          <div class="section-3__card-main-div">
+            <!-- Coffee Card Example -->
+            <div class="section-3__card black-clr">
+              <img
+                src="Cappuccino.jpg"
+                alt="Cappuccino"
+                class="section-3__coffee-img"
+              />
+              <div class="section-3__coffee-descp">
+                <h3>Cappuccino</h3>
+                <p>₹200</p>
+              </div>
+              <p>
+                Creamy espresso topped with frothed milk, served hot in a cup.
+              </p>
+              <button class="btn-add-cart">Add to Cart</button>
+            </div>
+
+            <div class="section-3__card black-clr">
+              <img
+                src="Americano.jpg"
+                alt="Americano"
+                class="section-3__coffee-img"
+              />
+              <div class="section-3__coffee-descp">
+                <h3>Hot Americano</h3>
+                <p>₹350</p>
+              </div>
+              <p>
+                Strong espresso diluted with hot water, delivering a bold flavor
+                profile.
+              </p>
+              <button class="btn-add-cart">Add to Cart</button>
+            </div>
+
+            <div class="section-3__card black-clr">
+              <img
+                src="Espresso.jpg"
+                alt="Espresso"
+                class="section-3__coffee-img"
+              />
+              <div class="section-3__coffee-descp">
+                <h3>Espresso</h3>
+                <p>₹400</p>
+              </div>
+              <p>
+                Robust, concentrated coffee brewed by forcing hot water through
+                fine grounds.
+              </p>
+              <button class="btn-add-cart">Add to Cart</button>
+            </div>
+
+            <!-- Repeat for other coffees, changing image src, name, and price -->
+            <div class="section-3__card black-clr">
+              <img
+                src="Macchiato.jpg"
+                alt="Macchiato"
+                class="section-3__coffee-img"
+              />
+              <div class="section-3__coffee-descp">
+                <h3>Macchiato</h3>
+                <p>₹399</p>
+              </div>
+              <p>Espresso with a splash of steamed milk; bold yet balanced.</p>
+              <button class="btn-add-cart">Add to Cart</button>
+            </div>
+
+            <div class="section-3__card black-clr">
+              <img src="Mocha.jpg" alt="Mocha" class="section-3__coffee-img" />
+              <div class="section-3__coffee-descp">
+                <h3>Mocha</h3>
+                <p>₹500</p>
+              </div>
+              <p>
+                Espresso with chocolate and steamed milk; rich and indulgent.
+              </p>
+              <button class="btn-add-cart">Add to Cart</button>
+            </div>
+            <div class="section-3__card black-clr">
+              <img
+                src="HOT LATTE.webp"
+                alt="Mocha"
+                class="section-3__coffee-img"
+              />
+              <div class="section-3__coffee-descp">
+                <h3>Hot Latte</h3>
+                <p>₹199</p>
+              </div>
+              <p>
+                Espresso hot, steamed milk, topped with a small amount of milk
+                foam
+              </p>
+              <button class="btn-add-cart">Add to Cart</button>
+            </div>
+            <!-- Add the rest similarly -->
+          </div>
+        </section>
+        <section
+          class="section-4 responsive-container common-padding"
+          id="section-4"
+        >
+          <h2 class="section-4__h2 black-clr text-center">
+            Discover Your Perfect Cup of Coffee Today!
+          </h2>
+          <p class="section-4__p black-clr text-center">
+            Savor rich aromas for your ultimate coffee experience.
+          </p>
+          <div class="section-4__img-div">
+            <img
+              src="./Images/Section-4-Images/section-4-img-1.webp"
+              alt="Section 4 Image 1"
+            />
+            <img
+              src="./Images/Section-4-Images/section-4-img-2.webp"
+              alt="Section 4 Image 2"
+            />
+            <img
+              src="./Images/Section-4-Images/section-4-img-3.webp"
+              alt="Section 4 Image 3"
+            />
+            <img
+              src="./Images/Section-4-Images/section-4-img-4.webp"
+              alt="Section 4 Image 4"
+            />
+            <img
+              src="./Images/Section-4-Images/section-4-img-5.webp"
+              alt="Section 4 Image 5"
+            />
+          </div>
+        </section>
+        <section class="section-5" id="section-5">
+          <div class="responsive-container">
+            <h2 class="section-5__h2 text-center">
+              Indulge in Rich Aromas: Your Perfect Coffee Fix
+            </h2>
+            <p class="section-5__p text-center">
+              Embark on a journey to find your perfect cup.
+            </p>
+            <div class="section-5__testimonial-div">
+              <div class="section-5__testimonial">
+                <img
+                  src="./Images/Section-5-Images/Testimonial-logo-1.webp"
+                  alt="Testimonial-logo-1"
+                />
+                <p>
+                  Absolutely divine! &nbsp;&nbsp;<i
+                    class="fa-solid fa-star yellow-clr"
+                  ></i
+                  ><i class="fa-solid fa-star yellow-clr"></i
+                  ><i class="fa-solid fa-star yellow-clr"></i
+                  ><i class="fa-solid fa-star yellow-clr"></i
+                  ><i class="fa-solid fa-star white-clr"></i>
+                </p>
+                <p>
+                  Exquisite flavor, bold aroma, and unparalleled richness. This
+                  coffee is a daily indulgence, elevating my mornings and
+                  setting the standard for a perfect cup. Truly exceptional in
+                  every sip.
+                </p>
+              </div>
+              <div class="section-5__testimonial">
+                <img
+                  src="./Images/Section-5-Images/Testimonial-logo-2.webp"
+                  alt="Testimonial-logo-2"
+                />
+                <p>
+                  Incredibly satisfying! &nbsp;&nbsp;<i
+                    class="fa-solid fa-star yellow-clr"
+                  ></i
+                  ><i class="fa-solid fa-star yellow-clr"></i
+                  ><i class="fa-solid fa-star yellow-clr"></i
+                  ><i class="fa-solid fa-star yellow-clr"></i
+                  ><i class="fa-solid fa-star yellow-clr"></i>
+                </p>
+                <p>
+                  Rich, robust, and utterly satisfying. This coffee is my daily
+                  ritual, fueling my day with its unparalleled flavor and
+                  energizing aroma. A true delight for the senses, it never
+                  disappoints.
+                </p>
+              </div>
+            </div>
+            <div class="section-5__counter-div">
+              <div class="section-5__counter">
+                <span class="section-5__counter-number" data-val="500"
+                  >100</span
+                >
+                <p>Happy Client</p>
+              </div>
+              <div class="section-5__counter">
+                <span class="section-5__counter-number" data-val="462"
+                  >100</span
+                >
+                <p class="text-center">Total Projects</p>
+              </div>
+              <div class="section-5__counter">
+                <span class="section-5__counter-number" data-val="313">8</span>
+                <p class="text-center">Cups Coffee</p>
+              </div>
+              <div class="section-5__counter">
+                <span class="section-5__counter-number" data-val="536">0</span>
+                <p class="text-center">Total Submitted</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="section-6 responsive-container" id="section-6">
+          <h2 class="section-6__h2 black-clr text-center">
+            Exploring Coffee Culture: A Journey of Aromas
+          </h2>
+          <p class="section-6__p black-clr text-center">
+            Embark on a flavorful journey through diverse coffee cultures.
+          </p>
+          <div class="section-6__blog-div">
+            <div class="section-6__blog">
+              <img
+                src="./Images/Section-6-Images/Blog-image-1.webp"
+                alt="Blog-image-1"
+              />
+              <div class="section-6__blog-category">
+                <a href="#">Travel</a>
+                <a href="#">Lifestyle</a>
+              </div>
+              <h5 class="section-6__blog-title black-clr">
+                The Art of Coffee: A Guide
+              </h5>
+              <p class="section-6__blog-descp black-clr">
+                Discover the intricate craft of coffee brewing, from bean
+                selection to the perfect pour, in this comprehensive guide
+              </p>
+              <p class="section-6__blog-date black-clr">21st September, 2025</p>
+            </div>
+            <div class="section-6__blog">
+              <img
+                src="./Images/Section-6-Images/Blog-image-2.webp"
+                alt="Blog-image-2"
+              />
+              <div class="section-6__blog-category">
+                <a href="#">Travel</a>
+                <a href="#">Lifestyle</a>
+              </div>
+              <h5 class="section-6__blog-title black-clr">
+                Exploring Espresso: A Connoisseur's Perspective
+              </h5>
+              <p class="section-6__blog-descp black-clr">
+                Immerse yourself in the world of espresso, exploring its
+                origins, flavors, and techniques with expert insights.
+              </p>
+              <p class="section-6__blog-date black-clr">1st October, 2025</p>
+            </div>
+          </div>
+        </section>
+        <!-- CONTACT US SECTION -->
+        <section id="section-7" class="contact-section responsive-container">
+          <h2 class="section-title">Contact Us</h2>
+          <p class="section-subtitle">
+            We’d love to hear from you! Fill out the form below or reach us
+            directly.
+          </p>
+
+          <div class="contact-container">
+            <!-- Contact Info -->
+            <div class="contact-info">
+              <p><i class="fa-solid fa-phone"></i> Phone: 082811 00001</p>
+              <p>
+                <i class="fa-solid fa-envelope"></i> Email: info@coffeeshop.com
+              </p>
+              <p>
+                <i class="fa-solid fa-location-dot"></i> Address: 342-A, opp.
+                Krishna Mandir Road, Nehru Nagar, Model Town Extension, Part -
+                II, Ludhiana, Punjab 141002
+              </p>
+            </div>
+
+            <!-- Contact Form -->
+            <form class="contact-form">
+              <input type="text" name="name" placeholder="Your Name" required />
+              <input
+                type="email"
+                name="email"
+                placeholder="Your Email"
+                required
+              />
+              <textarea
+                name="message"
+                rows="5"
+                placeholder="Your Message"
+                required
+              ></textarea>
+
+              <!-- Success message container -->
+              <div id="contact-message" class="contact-message"></div>
+
+              <button type="submit" class="btn-submit">Send Message</button>
+            </form>
+          </div>
+        </section>
+
+        <footer class="footer common-padding">
+          <div class="responsive-container">
+            <div class="footer__about-div">
+              <h4>About Us</h4>
+              <p>
+                Explore our passion-perfected coffee blends and savor the
+                journey with every rich, flavorful cup. Welcome to our coffee
+                family.
+              </p>
+              <p class="footer_copyright-text">
+                Copyright ©2025 <span>Naman shukla</span> | All rights reserved
+              </p>
+            </div>
+            <div class="footer__newsletter">
+              <h4>Newsletter</h4>
+              <p>Stay updates with our latest news</p>
+              <div class="footer__search-div">
+                <button><i class="fa-solid fa-arrow-right"></i></button>
+              </div>
+            </div>
+            <div class="footer__follow-us">
+              <h4>Follow Us</h4>
+              <p>Let us be social</p>
+
+              <div class="footer__social-links">
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+              </div>
+            </div>
+            <p>
+              Terms & Conditions | Privacy Policy | Refund & Cancellation Policy
+            </p>
+          </div>
+        </footer>
+      </main>
+    </div>
+    <div id="loginModal" class="modal">
+      <div class="modal-content animate">
+        <span class="close">&times;</span>
+        <h2>Welcome Back ☕</h2>
+        <form id="loginForm">
+          <div class="input-group">
+            <i class="fa fa-envelope"></i>
+            <input type="email" id="loginEmail" placeholder="Email" required />
+          </div>
+          <div class="input-group">
+            <i class="fa fa-lock"></i>
+            <input
+              type="password"
+              id="loginPassword"
+              placeholder="Password"
+              required
+            />
+          </div>
+          <button type="submit" class="btn-glow">Login</button>
+          <p>Don't have an account? <a href="#" id="toSignup">Sign up</a></p>
+        </form>
+      </div>
+    </div>
+
+    <!-- ===== SIGNUP MODAL ===== -->
+    <div id="signupModal" class="modal">
+      <div class="modal-content animate">
+        <span class="close">&times;</span>
+        <h2>Create Account ☕</h2>
+        <form id="signupForm">
+          <div class="input-group">
+            <i class="fa fa-user"></i>
+            <input
+              type="text"
+              id="signupName"
+              placeholder="Full Name"
+              required
+            />
+          </div>
+          <div class="input-group">
+            <i class="fa fa-envelope"></i>
+            <input type="email" id="signupEmail" placeholder="Email" required />
+          </div>
+          <div class="input-group">
+            <i class="fa fa-lock"></i>
+            <input
+              type="password"
+              id="signupPassword"
+              placeholder="Password"
+              required
+            />
+          </div>
+          <button type="submit" class="btn-glow">Sign Up</button>
+          <p>Already have an account? <a href="#" id="toLogin">Login</a></p>
+        </form>
+      </div>
+    </div>
+
+    <script src="app.js" type="module"></script>
+
+    <script>
+      // Get elements
+      // === ELEMENTS ===
+      const loginModal = document.getElementById("loginModal");
+      const signupModal = document.getElementById("signupModal");
+      const loginBtn = document.getElementById("loginBtn");
+      const closeBtns = document.querySelectorAll(".close");
+      const toSignup = document.getElementById("toSignup");
+      const toLogin = document.getElementById("toLogin");
+
+      // === MODAL CONTROL ===
+      loginBtn.onclick = () => openModal(loginModal);
+      toSignup.onclick = (e) => switchModal(e, loginModal, signupModal);
+      toLogin.onclick = (e) => switchModal(e, signupModal, loginModal);
+      closeBtns.forEach((btn) => (btn.onclick = closeAllModals));
+      window.onclick = (e) => {
+        if (e.target === loginModal || e.target === signupModal)
+          closeAllModals();
+      };
+
+      function openModal(modal) {
+        modal.style.display = "flex";
+      }
+      function closeAllModals() {
+        loginModal.style.display = "none";
+        signupModal.style.display = "none";
+      }
+      function switchModal(e, from, to) {
+        e.preventDefault();
+        from.style.display = "none";
+        to.style.display = "flex";
+      }
+
+      // === SIGNUP ===
+      document.getElementById("signupForm").addEventListener("submit", (e) => {
+        e.preventDefault();
+        const name = signupName.value.trim();
+        const email = signupEmail.value.trim();
+        const password = signupPassword.value.trim();
+
+        if (!name || !email || !password)
+          return showToast("⚠️ Please fill all fields");
+
+        const users = JSON.parse(localStorage.getItem("users")) || [];
+        if (users.some((u) => u.email === email))
+          return showToast("🚫 Email already registered!");
+
+        users.push({ name, email, password });
+        localStorage.setItem("users", JSON.stringify(users));
+        showToast("✅ Signup successful! Please login.");
+        switchModal(e, signupModal, loginModal);
+      });
+
+      // === LOGIN ===
+      document.getElementById("loginForm").addEventListener("submit", (e) => {
+        e.preventDefault();
+        const email = loginEmail.value.trim();
+        const password = loginPassword.value.trim();
+        const users = JSON.parse(localStorage.getItem("users")) || [];
+        const user = users.find(
+          (u) => u.email === email && u.password === password
+        );
+
+        if (!user) return showToast("❌ Invalid email or password!");
+        localStorage.setItem("loggedInUser", JSON.stringify(user));
+        showToast(`☕ Welcome, ${user.name.split(" ")[0]}!`);
+        closeAllModals();
+        updateNavbar();
+      });
+
+      // === UPDATE NAVBAR ===
+      function updateNavbar() {
+        const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+        if (loggedInUser) {
+          loginBtn.textContent = `Hi, ${
+            loggedInUser.name.split(" ")[0]
+          } (Logout)`;
+          loginBtn.classList.add("loggedin");
+          loginBtn.onclick = logout;
+        } else {
+          loginBtn.textContent = "LOGIN";
+          loginBtn.onclick = () => openModal(loginModal);
+        }
+      }
+
+      function logout() {
+        localStorage.removeItem("loggedInUser");
+        showToast("👋 Logged out successfully");
+        updateNavbar();
+      }
+
+      // === TOAST MESSAGE ===
+      function showToast(msg) {
+        const toast = document.createElement("div");
+        toast.textContent = msg;
+        toast.style.cssText = `
+    position: fixed; bottom: 100px; left: 50%; transform: translateX(-50%);
+    background: green; color: #fff; padding: 10px 20px;
+    border-radius: 60px; font-size: 20px; box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    z-index: 1000; animation: fadeToast 3s ease forwards;
+  `;
+        document.body.appendChild(toast);
+        setTimeout(() => toast.remove(), 3000);
+      }
+
+      // Init on load
+      updateNavbar();
+
+      // Load cart from localStorage or start empty
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+      // Function to save and update cart
+      function saveCart() {
+        localStorage.setItem("cart", JSON.stringify(cart));
+      }
+
+      // Function to update cart count in navbar
+      function updateCartCount() {
+        const cartCount = document.getElementById("cart-count");
+        cartCount.textContent = cart.length;
+      }
+
+      // Function to show custom toast message
+      function showAddToCartMessage(productName) {
+        const msg = document.createElement("div");
+        msg.textContent = `${productName} added to cart! 🛒`;
+        msg.className = "cart-toast";
+        document.body.appendChild(msg);
+
+        // Animate in
+        setTimeout(() => msg.classList.add("show"), 50);
+
+        // Remove after 2.5 seconds
+        setTimeout(() => {
+          msg.classList.remove("show");
+          setTimeout(() => msg.remove(), 300);
+        }, 2500);
+      }
+
+      // Initial load - show existing items count
+      updateCartCount();
+
+      // Add event listener to all Add to Cart buttons (if present)
+      document.querySelectorAll(".btn-add-cart").forEach((button) => {
+        button.addEventListener("click", function () {
+          const card = this.closest(".section-3__card");
+          const name = card.querySelector("h3").textContent;
+          const price = parseInt(
+            card.querySelector("p").textContent.replace("₹", "")
+          );
+          const img = card.querySelector("img").src;
+
+          // Add product to cart
+          cart.push({ name, price, img });
+          saveCart();
+
+          // Update count and show colored message
+          updateCartCount();
+          showAddToCartMessage(name);
+        });
+      });
+
+      // Select the contact form
+      const contactForm = document.querySelector(".contact-form");
+
+      contactForm.addEventListener("submit", function (e) {
+        e.preventDefault(); // Prevent page reload
+
+        const name = contactForm.querySelector('input[name="name"]').value;
+        const email = contactForm.querySelector('input[name="email"]').value;
+        const messageText = contactForm.querySelector(
+          'textarea[name="message"]'
+        ).value;
+
+        const messageDiv = document.getElementById("contact-message");
+
+        // Show success message
+        messageDiv.textContent = `✅ Thank you, ${name}! Your message has been sent.`;
+        messageDiv.classList.add("show-message");
+
+        // Optional: Reset form
+        contactForm.reset();
+
+        // Optional: hide message after 5 seconds
+        setTimeout(() => {
+          messageDiv.classList.remove("show-message");
+          messageDiv.textContent = "";
+        }, 5000);
+      });
+    </script>
+  </body>
+</html>

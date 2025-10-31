@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coffee Cart</title>
+  <style>
+    /* General */
+    body {
+      font-family: "Poppins", sans-serif;
+      background: #f7f3ef;
+      color: #4a2c2a;
+      margin: 0;
+      padding: 0;
+    }
+
+    h2, h3 {
+      text-align: center;
+      font-weight: 600;
+    }
+
+    .cart-container {
+      max-width: 650px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Cart Item */
+    .cart-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 12px;
+      background: #fdf6f0;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+      transition: transform 0.2s ease;
+    }
+    .cart-item:hover {
+      transform: translateY(-3px);
+    }
+
+    .cart-item img {
+      width: 70px;
+      border-radius: 10px;
+      margin-right: 15px;
+    }
+
+    .cart-info {
+      flex-grow: 1;
+      padding: 0 10px;
+    }
+
+    .cart-info span {
+      display: block;
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    .cart-item button {
+      background: #d9534f;
+      color: #fff;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .cart-item button:hover {
+      background: #c9302c;
+    }
+
+    /* Total */
+    .cart-total {
+      font-size: 22px;
+      font-weight: bold;
+      margin-top: 20px;
+      text-align: right;
+      color: #2e1a15;
+    }
+
+    /* Buttons */
+    button.checkout-btn, button.place-btn {
+      width: 100%;
+      padding: 14px;
+      font-size: 18px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: 0.3s;
+    }
+    button.checkout-btn {
+      background: #6f4e37;
+      color: white;
+    }
+    button.checkout-btn:hover {
+      background: #523727;
+    }
+    button.place-btn {
+      background: #3c8c40;
+      color: white;
+    }
+    button.place-btn:hover {
+      background: #2a602c;
+    }
+
+    /* Checkout Form */
+    .checkout-form {
+      display: none;
+      margin-top: 30px;
+      background: #fdf6f0;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    label {
+      display: block;
+      margin: 10px 0 5px;
+      font-weight: 500;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      font-size: 15px;
+    }
+    input:focus, textarea:focus, select:focus {
+      outline: none;
+      border-color: #6f4e37;
+      box-shadow: 0 0 5px rgba(111, 78, 55, 0.4);
+    }
+    .order-message {
+  display: none;
+  margin: 15px 0;
+  padding: 15px 20px;
+  background: green; /* light coffee beige */
+  color: white; /* dark coffee brown */
+ 
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+ 
+}
+
+.order-message.show-message {
+  display: block;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Optional fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+  </style>
+</head>
+<body>
+  <div class="cart-container">
+    <h2>🛒 Your Coffee Cart</h2>
+    
+    <!-- Cart Items -->
+    <div id="cart-items"></div>
+    <p class="cart-total" id="cart-total">Total: ₹0</p>
+
+    <!-- Checkout Button -->
+    <button class="checkout-btn" onclick="showCheckout()">Proceed to Checkout</button>
+
+    <!-- Checkout Form -->
+    <div class="checkout-form" id="checkout-form">
+      <h3>Checkout Details</h3>
+      <div id="order-message" class="order-message"></div>
+
+<form id="form">
+  <label for="name">Full Name:</label>
+  <input type="text" id="name" required />
+
+  <label for="email">Email:</label>
+  <input type="email" id="email" required />
+
+  <label for="address">Shipping Address:</label>
+  <textarea id="address" rows="3" required></textarea>
+
+  <label for="payment">Payment Method:</label>
+  <select id="payment" required>
+    <option value="">Select...</option>
+    <option value="COD">Cash on Delivery</option>
+    <option value="Card">Credit/Debit Card</option>
+    <option value="UPI">UPI</option>
+  </select>
+
+  <button type="submit" class="place-btn">Place Order</button>
+</form>
+
+    </div>
+  </div>
+
+  <script>
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    // Display cart items
+    function updateCartDisplay() {
+      const cartItemsContainer = document.getElementById("cart-items");
+      const cartTotal = document.getElementById("cart-total");
+
+      cartItemsContainer.innerHTML = "";
+      let total = 0;
+
+      cart.forEach((item, index) => {
+        total += item.price;
+        let div = document.createElement("div");
+        div.classList.add("cart-item");
+        div.innerHTML = `
+          <img src="${item.img}" alt="${item.name}">
+          <div class="cart-info">
+            <span>${item.name}</span>
+            <span>₹${item.price}</span>
+          </div>
+          <button onclick="removeFromCart(${index})">REMOVE</button>
+        `;
+        cartItemsContainer.appendChild(div);
+      });
+
+      cartTotal.textContent = "Total: ₹" + total;
+      localStorage.setItem("cart", JSON.stringify(cart));
+    }
+
+    // Remove item
+    function removeFromCart(index) {
+      cart.splice(index, 1);
+      updateCartDisplay();
+    }
+
+    // Show checkout form
+    function showCheckout() {
+      if (cart.length === 0) {
+        alert("Your cart is empty!");
+        return;
+      }
+      document.getElementById("checkout-form").style.display = "block";
+      window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    // Place order
+  document.getElementById("form").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const name = document.getElementById("name").value;
+  const messageDiv = document.getElementById("order-message");
+
+  // Show success message
+  messageDiv.textContent = `✅ Order placed successfully! Thank you, ${name}.`;
+  messageDiv.classList.add("show-message");
+
+  // Clear cart
+  localStorage.removeItem("cart");
+
+  // Optional: Reset form
+  document.getElementById("form").reset();
+
+  // Optional: redirect after a delay
+  setTimeout(() => {
+    window.location.href = "index.html";
+  }, 3000); // 3 seconds
+});
+
+
+    updateCartDisplay();
+  </script>
+</body>
+</html>
